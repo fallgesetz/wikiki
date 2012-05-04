@@ -1,0 +1,14 @@
+store/ 
+    contains a set of sqlite files of the format
+    wiki : content
+app.py/ 
+    just access the wiki.sqlite3 and displays whatever is in there.
+bin/wikiki command line script to modify the wiki. 
+
+Keep wiki.sqlite3 under version control to get old copies
+heroku push to make wiki available to the whole world. 
+
+TODO:
+support markdown, support latex, maybe some plugin mechanism
+
+
