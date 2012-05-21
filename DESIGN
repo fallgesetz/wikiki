@@ -1,14 +1,22 @@
-store/ 
-    contains a set of sqlite files of the format
-    wiki : content
-app.py/ 
-    just access the wiki.sqlite3 and displays whatever is in there.
+==Design==
+(not all the way implemented)
+
 bin/wikiki command line script to modify the wiki. 
+bin/wikiki-dump tool to dump the wiki to html for easy publishing (to dropbox or something)
+src/app.py server to host the server
+store.sqlite3 - database for pages
 
-Keep wiki.sqlite3 under version control to get old copies
-heroku push to make wiki available to the whole world. 
+src/templates/entry.html - Theme individual pages
+src/templates/index.html - Theme the main page.
+static/* whatever CSS files you want
 
-TODO:
-support markdown, support latex, maybe some plugin mechanism
+Main ideas:
+1. keep store.sqlite3 under version control.
+2. command line access
+
+Goals:
+1. Minimize dependencies
+2. Intuitive command line options.
+3. The unix way.
 
 
