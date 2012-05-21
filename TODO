@@ -7,3 +7,5 @@ Long Term:
 
 -move shit to .wikiki
 -make it possible to do rudimentary version control from the command line (like, repeatedly run git commit inside .wikiki))
+-python-magic + libmagic dependency is sort of nasty -- maybe there's an ok way to implement crap from here: http://www.garykessler.net/library/file_sigs.html
+

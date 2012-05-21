@@ -2,4 +2,6 @@ flask
 sqlite3dbm
 gunicorn
 python-creole
-python-magic
+
+# modified files
+-e git+git://github.com/fallgesetz/python-magic.git#egg=python-magic

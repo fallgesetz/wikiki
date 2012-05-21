@@ -20,7 +20,8 @@ def get_db():
 ####
 @app.route('/')
 def main():
-    pass
+    store = get_db()
+    return flask.render_template("index.html", keys=store.keys())
 
 @app.route('/<page>')
 def wiki(page):

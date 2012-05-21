@@ -33,32 +33,30 @@ def main():
     parser = argparse.ArgumentParser("Command line wiki access")
     # creation behavior
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('-m', '--modify', help = "Make/Override a new topic",
-        action="store_false", dest="append")
+    group.add_argument('-m', '--modify', help = "Make/Override a new topic", action="store_true")
     group.add_argument('-a', '--append',
         help = "Append to an existing topic, or creates a new topic if the existing topic doesn't exist",
-        default=True, action="store_true", dest="append")
-    # editing behavior
-    parser.add_argument('-e','--editor', default=None, action="store_true")
+        action = "store_true")
+    group.add_argument('-e','--editor', action="store_true", help="open key in text editor")
     parser.add_argument("key")
-    parser.add_argument("value", nargs="?")
+    parser.add_argument("value", nargs="?", help="Optional in editor mode")
 
     results = parser.parse_args()
     if results.editor:
         handle, path = tempfile.mkstemp()
-        if results.append:
-            with open(path, 'w') as f:
-                f.write(store_db.get(results.key))
+        print store_db
+        with open(path, 'w') as f:
+            f.write(store_db.get(results.key))
         subprocess.check_call(['vim', path])
         with open(path, 'r') as f:
             contents = f.read()
+            dash_modify(results.key, contents)
+    elif results.append:
+        dash_append(results.key, results.value)
+    elif results.modify:
+        dash_modify(results.key, results.value)
     else:
-        contents = results.value
-
-    if results.append:
-        dash_append(results.key, contents)
-    else:
-        dash_modify(results.key, contents)
+        pass
 
 if __name__ == '__main__':
     main()

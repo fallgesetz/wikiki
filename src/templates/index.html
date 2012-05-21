@@ -1,1 +1,14 @@
-<!-- TODO -->
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Wiki</title>
+	</head>
+	<body>
+	<h1> Slash </h1>
+	<ul>
+	{% for key in keys %}
+	      <li> <a href="/{{ key }}"> {{ key }} </a> </li>
+	{% endfor %}
+	</ul>
+	</body>
+</html>
