@@ -1,0 +1,7 @@
+OTHERWISE KNOWN AS FEATURES
+
+pros/cons of a single sqlite file under version control
+pro/
+1. easy interface available. (use git for version control instead of something fancy)
+con/
+2. have to version control in batch

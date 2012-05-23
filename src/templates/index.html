@@ -2,13 +2,16 @@
 <html>
 	<head>
 	<title>Wiki</title>
+	<link rel="stylesheet" href="static/index.css" type="text/css" ></link>
 	</head>
 	<body>
-	<h1> Slash </h1>
-	<ul>
+	<h1> wikiki </h1>
+	<div id="main">
 	{% for key in keys %}
-	      <li> <a href="/{{ key }}"> {{ key }} </a> </li>
+	       <div class="topic" >
+	       <a href="/{{ key }}"> {{ key }} </a>
+	       </div>
 	{% endfor %}
-	</ul>
+	</div>
 	</body>
 </html>

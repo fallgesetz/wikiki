@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Lustria);
+h1 { font-family: 'Lustria', serif; 
+     text-align: center}
+
+#main { width: 500px; 
+	margin: 0px auto; }
+
+.topic { float: left;
+	 margin: 10px;
+	 padding: 25px;
+	 border: 1px;
+	}
+
+A:link {text-decoration: none}
+A:visited {text-decoration: none;
+	color: blue}
+A:active {text-decoration: none}
+A:hover {text-decoration: none}
