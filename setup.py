@@ -5,11 +5,13 @@ setup(
     version='0.0.1',
     author='Leah Xue',
     author_email='fallgesetz@gmail.com',
+    package_dir={'wikiki' : 'src'}
     packages=['wikiki'],
     scripts=['bin/wikiki.py'],
     # todo missing some shit
     install_requires=[
         "flask",
-        "sqlite3dbm"
+        "sqlite3dbm",
+        "python-magic",
         ],
 )

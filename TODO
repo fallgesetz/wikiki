@@ -2,6 +2,8 @@ Short Term:
 
 -ability to copy and paste images (with the help of libmagic)
 -theming
+-plugins, figure out how to make creole2html work with latex.
+-redefine creole2html as a plugin
 
 Long Term:
 
