@@ -46,7 +46,8 @@ def main():
         handle, path = tempfile.mkstemp()
         print store_db
         with open(path, 'w') as f:
-            f.write(store_db.get(results.key))
+            if results.key in store_db:
+                f.write(store_db[results.key])
         subprocess.check_call(['vim', path])
         with open(path, 'r') as f:
             contents = f.read()
