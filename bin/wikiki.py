@@ -38,24 +38,25 @@ def main():
         help = "Append to an existing topic, or creates a new topic if the existing topic doesn't exist",
         action = "store_true")
     group.add_argument('-e','--editor', action="store_true", help="open key in text editor")
-    parser.add_argument("key")
+    parser.add_argument("key", nargs="+")
     parser.add_argument("value", nargs="?", help="Optional in editor mode")
 
     results = parser.parse_args()
+    key = ' '.join(results.key)
     if results.editor:
         handle, path = tempfile.mkstemp()
         print store_db
         with open(path, 'w') as f:
-            if results.key in store_db:
-                f.write(store_db[results.key])
+            if key in store_db:
+                f.write(store_db[key])
         subprocess.check_call(['vim', path])
         with open(path, 'r') as f:
             contents = f.read()
-            dash_modify(results.key, contents)
+            dash_modify(key, contents)
     elif results.append:
-        dash_append(results.key, results.value)
+        dash_append(key, results.value)
     elif results.modify:
-        dash_modify(results.key, results.value)
+        dash_modify(key, results.value)
     else:
         pass
 
